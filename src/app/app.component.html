@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="employees" class="nav-link" routerLinkActive="active"><i class="bi bi-house"></i> Employee List</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="AddEmployee" class="nav-link" routerLinkActive="active"><i class="bi bi-folder-plus"></i>Add Employee</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

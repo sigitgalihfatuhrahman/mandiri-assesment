@@ -1,0 +1,57 @@
+  <div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-md-11" style="margin-bottom: 20px;">
+            <h4><b>Manage Employees</b></h4>
+          </div>
+          <div class="col-md-1">
+            <button class="btn btn-success" (click)="addEmployee()">
+                <i class="bi bi-plus-circle"></i><span> Add</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content" >
+        <thead>
+            <tr class="center-align">
+                <th>id</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Birth date</th>
+                <th>Basic Salary</th>
+                <th>Status</th>
+                <th>Group</th>
+                <th>Description</th>
+                <th class="text-center">Actions</th>
+              </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees" class="center-align">
+            <td>{{employee.id}}</td>
+            <td>{{employee.user_name}}</td>
+            <td>{{employee.first_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.birth_date}}</td>
+            <td>{{employee.basic_salary}}</td>
+            <td>{{employee.status}}</td>
+            <td>{{employee.group_name}}</td>
+            <td>{{employee.description}}</td>
+            <td style="width: 20%;text-align:center;">
+              <a href="#" [routerLink]="['/ViewEmployee/', employee.id]" class="btn btn-warning"><i class="bi bi-info-circle"></i></a>
+              <a href="#" [routerLink]="['/EditEmployee/', employee.id]" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+              <button type="button" (click)="deleteEmployee(employee)" class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngIf="employees.length == 0" colspan="6">No Employee Found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
